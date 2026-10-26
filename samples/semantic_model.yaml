@@ -1,0 +1,127 @@
+name: financial_txn_semantic_model
+description: Semantic model for the Financial Transactions Gold Layer.
+tables:
+- name: FINANCIAL_TXN_DB.GOLD.SV_TRANSACTIONS
+  description: Core view containing all financial transactions, amounts, and statuses.
+  base_table:
+    database: FINANCIAL_TXN_DB
+    schema: GOLD
+    table: SV_TRANSACTIONS
+  dimensions:
+  - name: transaction_id
+    expr: TRANSACTION_ID
+    description: Unique identifier for the transaction.
+    data_type: VARCHAR
+  - name: transaction_status
+    expr: STATUS
+    description: Status of the transaction (e.g., SUCCESS, FAILED, PENDING).
+    data_type: VARCHAR
+  - name: payment_method
+    expr: PAYMENT_METHOD
+    description: Method used for payment (e.g., CREDIT_CARD, BANK_TRANSFER).
+    data_type: VARCHAR
+  measures:
+  - name: transaction_amount
+    expr: AMOUNT
+    description: The total amount of the transaction in USD.
+    default_aggregation: sum
+    data_type: NUMBER
+  time_dimensions:
+  - name: transaction_date
+    expr: TRANSACTION_DATE
+    description: The date the transaction occurred.
+    data_type: DATE
+- name: FINANCIAL_TXN_DB.GOLD.SV_FRAUD_MONITORING
+  description: Contains metrics and alerts related to potentially fraudulent transactions.
+  base_table:
+    database: FINANCIAL_TXN_DB
+    schema: GOLD
+    table: SV_FRAUD_MONITORING
+  dimensions:
+  - name: alert_id
+    expr: ALERT_ID
+    description: Unique identifier for the fraud alert.
+    data_type: VARCHAR
+  - name: risk_level
+    expr: RISK_LEVEL
+    description: Categorized risk level (e.g., HIGH, MEDIUM, LOW).
+    data_type: VARCHAR
+  measures:
+  - name: fraud_score
+    expr: FRAUD_SCORE
+    description: Numerical score indicating the likelihood of fraud (0-100).
+    default_aggregation: avg
+    data_type: NUMBER
+  - name: flagged_amount
+    expr: FLAGGED_AMOUNT
+    description: The monetary value flagged for potential fraud.
+    default_aggregation: sum
+    data_type: NUMBER
+  time_dimensions:
+  - name: alert_date
+    expr: ALERT_DATE
+    description: The date the fraud alert was triggered.
+    data_type: DATE
+- name: FINANCIAL_TXN_DB.GOLD.SV_GATEWAY_PERFORMANCE
+  description: Tracks the performance, uptime, and latency of payment gateways.
+  base_table:
+    database: FINANCIAL_TXN_DB
+    schema: GOLD
+    table: SV_GATEWAY_PERFORMANCE
+  dimensions:
+  - name: gateway_name
+    expr: GATEWAY_NAME
+    description: Name of the payment gateway (e.g., Stripe, PayPal).
+    data_type: VARCHAR
+  measures:
+  - name: latency_ms
+    expr: LATENCY_MS
+    description: Average response time of the gateway in milliseconds.
+    default_aggregation: avg
+    data_type: NUMBER
+  - name: success_rate
+    expr: SUCCESS_RATE
+    description: Percentage of successful transactions processed through this gateway.
+    default_aggregation: avg
+    data_type: NUMBER
+  time_dimensions:
+  - name: date
+    expr: PERFORMANCE_DATE
+    description: The date of the recorded performance metric.
+    data_type: DATE
+- name: FINANCIAL_TXN_DB.GOLD.SV_SETTLEMENT_RECONCILIATION
+  description: Data for reconciling settled amounts against expected transaction amounts.
+  base_table:
+    database: FINANCIAL_TXN_DB
+    schema: GOLD
+    table: SV_SETTLEMENT_RECONCILIATION
+  dimensions:
+  - name: settlement_id
+    expr: SETTLEMENT_ID
+    description: Unique identifier for the settlement batch.
+    data_type: VARCHAR
+  - name: reconciliation_status
+    expr: RECON_STATUS
+    description: Status of reconciliation (e.g., MATCHED, DISCREPANCY).
+    data_type: VARCHAR
+  measures:
+  - name: expected_amount
+    expr: EXPECTED_AMOUNT
+    description: The amount expected to be settled based on transactions.
+    default_aggregation: sum
+    data_type: NUMBER
+  - name: actual_settled_amount
+    expr: ACTUAL_SETTLED_AMOUNT
+    description: The actual amount deposited by the gateway/bank.
+    default_aggregation: sum
+    data_type: NUMBER
+  - name: discrepancy_amount
+    expr: DISCREPANCY_AMOUNT
+    description: The difference between expected and actual settled amounts.
+    default_aggregation: sum
+    data_type: NUMBER
+  time_dimensions:
+  - name: settlement_date
+    expr: SETTLEMENT_DATE
+    description: The date the funds were settled.
+    data_type: DATE

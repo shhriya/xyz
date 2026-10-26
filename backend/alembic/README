@@ -1,0 +1,5 @@
+Alembic migrations for the application database.
+
+From backend/:
+  alembic upgrade head                              # apply migrations (also runs at app startup)
+  alembic revision --autogenerate -m "describe"     # after changing app/db/models.py

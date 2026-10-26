@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* Relanto Brand Colors */
+  --color-relanto-blue: #10338D;
+  --color-relanto-blue-dark: #071339;
+  --color-relanto-blue-royal: #1C58F6;
+  --color-relanto-blue-faded: #467AFF;
+  --color-relanto-blue-tinted: #D1DEFF;
+  --color-relanto-blue-white: #ECEFFF;
+  --color-relanto-orange: #FF3C00;
+  --color-relanto-orange-clementine: #F88B26;
+  --color-relanto-orange-logo: #EB4925;
+  --color-relanto-grey: #666666;
+  --color-relanto-charcoal: #1E1E1E;
+  --color-relanto-lite-grey: #F1F2ED;
+
+  /* White Theme Mapping for Tailwind Slate Utilities */
+  --color-slate-950: #FFFFFF; /* Pure White Background */
+  --color-slate-900: #FFFFFF; /* Card Background */
+  --color-slate-850: #F8FAFC; /* Card Secondary */
+  --color-slate-800: #F1F5F9; /* Subtle Box Background */
+  --color-slate-700: #E2E8F0; /* Clean Border */
+  --color-slate-600: #CBD5E1; /* Secondary Border */
+  --color-slate-500: #666666; /* Muted Text (Relanto Grey) */
+  --color-slate-400: #475569; /* Secondary Text */
+  --color-slate-300: #334155; /* Body Text */
+  --color-slate-200: #1E1E1E; /* Primary Text (Charcoal) */
+  --color-slate-100: #10338D; /* Headings (Relentless Blue) */
+
+  /* Brand Accents mapped to Relanto Blue and Orange */
+  --color-emerald-300: #7FA2FF;
+  --color-emerald-400: #1C58F6; /* Royal Blue */
+  --color-emerald-500: #10338D; /* Relentless Blue */
+  --color-emerald-600: #0A225E; /* Dark Blue */
+  --color-emerald-800: #10338D;
+  --color-emerald-950: #ECEFFF; /* Blue White */
+
+  --color-teal-400: #FF3C00; /* Relanto Orange */
+  --color-teal-500: #EB4925;
+  --color-purple-400: #1C58F6;
+  --color-purple-500: #10338D;
+  --color-yellow-400: #FF3C00;
+  --color-yellow-500: #F88B26;
+
+  /* Typography */
+  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'Source Code Pro', monospace;
+  --font-highlight: 'Hanken Grotesk', sans-serif;
+}
+
+@layer base {
+  :root {
+    --brand-primary: #10338D;
+    --brand-secondary: #FF3C00;
+    --brand-royal: #1C58F6;
+    --brand-blue-white: #ECEFFF;
+    --brand-charcoal: #1E1E1E;
+    --brand-grey: #666666;
+    --brand-lite-grey: #F1F2ED;
+    --brand-border: #E2E8F0;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    font-family: 'Source Sans 3', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Hanken Grotesk', 'Source Sans 3', sans-serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #10338D;
+  }
+}
+
+/* Custom Animation Utility */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 51, 141, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 60, 0, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Glass Panel Utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(209, 222, 255, 0.7);
+  box-shadow: 0 4px 20px -2px rgba(16, 51, 141, 0.05);
+}

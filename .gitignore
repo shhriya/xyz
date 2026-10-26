@@ -1,0 +1,73 @@
+# Environments & Virtual Envs
+venv/
+*/venv/
+.venv/
+*/.venv/
+env/
+*/env/
+ENV/
+
+# Node dependencies & build artifacts
+node_modules/
+*/node_modules/
+dist/
+*/dist/
+dist-ssr/
+*.local
+
+# Environment variables & API keys
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Python bytecode & cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated pipeline output & local runtime database
+dbt_output/
+dbt_cloud_modernization/
+*/dbt_output/
+*.db
+backend/modernization.db
+
+# Database & runtime files
+*.db
+*.sqlite
+*.sqlite3
+backend/*.db
+backend/modernization.db
+dbt_output/
+
+# Legacy JSON stores (now in PostgreSQL; import with backend/scripts/migrate_legacy_data.py)
+*_store.json
+snowflake_scope_*.json
+snowflake_costing_last_creds.json
+backend/routers/
+
+# Private keys & credential files (never commit; point SNOWFLAKE_PRIVATE_KEY_PATH at a file outside the repo)
+*.p8
+*.pem
+rsa_key.pub
+keys.json
+
+# Tooling caches
+.ruff_cache/
+.neon

@@ -1,0 +1,12 @@
+objectPath,objectName,objectType,id
+/Explore/Default,raw to stage,DTEMPLATE,1E3YDbdX3dZhBJDQo1inQP
+/Explore/Default,source to raw,DTEMPLATE,8BIahrl14pbhKI68c1PoQY
+/Explore/Default,STAGE_TO_INTERMEDIATE_TASK,MTT,8P0XTHg0q4nbdDKUJnkPae
+/Explore/Default,SOURCE_TO_RAW_TASK,MTT,8lkfsmKD9p1bj4ed4wsKyy
+/Explore,Default,Project,4luAEthz7Cbb9EFanNtXsj
+/Explore/Default,RAW_TO_STAGE_TASK,MTT,1rAxbJeSdWRjVWrhTnQQKZ
+/SYS,snflk_iics2,Connection,2FHHGLIWRCbcaiYSnMRqYl
+/Explore/Default,Intermediate to target,DTEMPLATE,3t0lwKbC1vZcjrs3TMhwC0
+/Explore/Default,MULTIFLOW_IICS_SCD_TYPE2,WORKFLOW,8wHrqvNRBwujT2UqBMzzqq
+/Explore/Default,INTERMEDIATE_TO_TARGET_TASK,MTT,bAKpIacsGgliikJNzrMu4g
+/Explore/Default,stage to intermediate,DTEMPLATE,3z3Dl8QCp9hjioyKy8noAL

@@ -1,0 +1,41 @@
+# Web framework
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+python-multipart==0.0.32
+pydantic==2.13.5
+pydantic-settings==2.15.0
+
+# Application database (PostgreSQL)
+sqlalchemy==2.0.54
+psycopg2-binary==2.9.13
+alembic==1.20.0
+
+# Configuration & HTTP
+python-dotenv==1.2.3
+requests==2.34.2
+pyyaml==6.0.3
+
+# Data platform connectors
+snowflake-connector-python==4.7.4
+oracledb==26.0.0
+# CDC Pipeline: SQLAlchemy dialects/drivers for every source and target it supports
+# (PostgreSQL uses psycopg2 above, Oracle uses oracledb above)
+mysql-connector-python==9.3.0
+pymssql==2.4.1
+snowflake-sqlalchemy==1.11.1
+sqlalchemy-redshift==1.0.0
+redshift-connector==2.1.16
+sqlalchemy-bigquery==1.17.2
+databricks-sqlalchemy==2.0.10
+duckdb==1.5.5
+duckdb-engine==0.17.0
+pyarrow==23.0.1  # < 24: snowflake-connector's constraint; databricks would otherwise pull 25
+boto3==1.43.96
+
+# LLM & auth helpers
+openai==3.14.1
+cryptography==50.0.1
+PyJWT==2.14.0
+
+# Task scheduling
+APScheduler==3.10.4

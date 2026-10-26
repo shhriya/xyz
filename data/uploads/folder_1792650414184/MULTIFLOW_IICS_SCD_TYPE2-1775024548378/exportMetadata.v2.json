@@ -1,0 +1,301 @@
+{
+  "name" : "MULTIFLOW_IICS_SCD_TYPE2-1775024548378",
+  "sourceOrgId" : "5o5UtTQ1QumhxtgiNjmzmv",
+  "sourceOrgName" : "relanto",
+  "exportedObjects" : [ {
+    "objectGuid" : "1E3YDbdX3dZhBJDQo1inQP",
+    "objectName" : "raw to stage",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY1700000000000E"
+      },
+      "objectRefs" : [ "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "8BIahrl14pbhKI68c1PoQY",
+    "objectName" : "source to raw",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY1700000000000D"
+      },
+      "objectRefs" : [ "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "8P0XTHg0q4nbdDKUJnkPae",
+    "objectName" : "STAGE_TO_INTERMEDIATE_TASK",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0Z000000000009"
+      },
+      "objectRefs" : [ "3z3Dl8QCp9hjioyKy8noAL", "4eu6pr012mmc68TIhNYnIN", "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "4eu6pr012mmc68TIhNYnIN",
+    "objectName" : "Informatica Cloud Hosted Agent",
+    "objectType" : "AgentGroup",
+    "path" : "/SYS",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "025000000000002"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "8lkfsmKD9p1bj4ed4wsKyy",
+    "objectName" : "SOURCE_TO_RAW_TASK",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0Z000000000007"
+      },
+      "objectRefs" : [ "8BIahrl14pbhKI68c1PoQY", "4eu6pr012mmc68TIhNYnIN", "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "4luAEthz7Cbb9EFanNtXsj",
+    "objectName" : "Default",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ {
+        "name" : "IS_DEF_LOC",
+        "value" : "true"
+      } ],
+      "additionalInfo" : {
+        "description" : "Auto-generated Default Project",
+        "contentType" : null,
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "1rAxbJeSdWRjVWrhTnQQKZ",
+    "objectName" : "RAW_TO_STAGE_TASK",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0Z000000000008"
+      },
+      "objectRefs" : [ "1E3YDbdX3dZhBJDQo1inQP", "4eu6pr012mmc68TIhNYnIN", "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "2FHHGLIWRCbcaiYSnMRqYl",
+    "objectName" : "snflk_iics2",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0B000000000003"
+      },
+      "objectRefs" : [ "4eu6pr012mmc68TIhNYnIN" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "complex scenarios",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "3t0lwKbC1vZcjrs3TMhwC0",
+    "objectName" : "Intermediate to target",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY1700000000000H"
+      },
+      "objectRefs" : [ "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "8wHrqvNRBwujT2UqBMzzqq",
+    "objectName" : "MULTIFLOW_IICS_SCD_TYPE2",
+    "objectType" : "WORKFLOW",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0N000000000002"
+      },
+      "objectRefs" : [ "bAKpIacsGgliikJNzrMu4g", "8P0XTHg0q4nbdDKUJnkPae", "8lkfsmKD9p1bj4ed4wsKyy", "1rAxbJeSdWRjVWrhTnQQKZ" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "bAKpIacsGgliikJNzrMu4g",
+    "objectName" : "INTERMEDIATE_TO_TARGET_TASK",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY0Z000000000006"
+      },
+      "objectRefs" : [ "3t0lwKbC1vZcjrs3TMhwC0", "4eu6pr012mmc68TIhNYnIN", "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "3z3Dl8QCp9hjioyKy8noAL",
+    "objectName" : "stage to intermediate",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0138GY1700000000000F"
+      },
+      "objectRefs" : [ "2FHHGLIWRCbcaiYSnMRqYl" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  } ]
+}
